@@ -5,8 +5,21 @@ class Bicycle {
     int cadence = 0;
     int gear = 1;
     float speed = 0;
+    int tireCircInches;     // value is set by the constructors below
 
-    void changeCadence(int newValue) {      //changecadence = 50
+    public Bicycle(int tireCircumference){
+        tireCircInches = tireCircumference;
+    }
+
+    public int getTireCircInches(){
+        return tireCircInches;
+    }
+
+    public void setTireCircInches(int tireCirc){
+        tireCircInches = tireCirc;
+    }
+
+    void changeCadence(int newValue) {
         if (newValue < 0) {
             cadence = 0;
         }
@@ -42,12 +55,12 @@ class Bicycle {
 
         int inchesPerMin;
         float milesPerHour;
-        int tireCircumference = 80;
+        //int tireCircumference = 80;  // moved this up to be a field in class Bicycle since now the variable wheel class will use it also
         int tireRPM = 0;
         int inchesPerMile = 63360; // there are 63360 inches in a mile
 
         tireRPM = gear * cadence;
-        inchesPerMin = tireRPM * tireCircumference;
+        inchesPerMin = tireRPM * tireCircInches;
         milesPerHour = (float) inchesPerMin/inchesPerMile;
         speed = milesPerHour;
 
