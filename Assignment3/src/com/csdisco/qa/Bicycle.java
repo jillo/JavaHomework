@@ -45,12 +45,12 @@ class Bicycle {
         int tireCircumference = 80;
         int tireRPM = 0;
         int inchesPerMile = 63360; // there are 63360 inches in a mile
+        int minutesPerHour = 60;
 
         tireRPM = gear * cadence;
         inchesPerMin = tireRPM * tireCircumference;
-        milesPerHour = (float) inchesPerMin/inchesPerMile;
+        milesPerHour = (float) inchesPerMin / inchesPerMile * minutesPerHour;
         speed = milesPerHour;
-
     }
 
     void speedUp(int increment) { cadence = cadence + increment; }
