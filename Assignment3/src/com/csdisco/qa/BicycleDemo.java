@@ -35,7 +35,7 @@ class BicycleDemo {
         // Create two different 
         // Bicycle objects
         Bicycle bike1 = new Bicycle();
-        Bicycle bike2 = new Bicycle();
+        Bicycle bike2 = new VariableWheelBicycle(50);
 
         // Invoke methods on 
         // those objects
@@ -43,6 +43,14 @@ class BicycleDemo {
         bike1.speedUp(10);
         bike1.changeGear(7);
         bike1.printStates();
+        
+        // This is how I tested this to be certain it was returning the correct calculations
+/*
+        bike2.changeCadence(50);
+        bike2.speedUp(10);
+        bike2.changeGear(7);
+        bike2.printStates();
+*/
 
         bike2.changeCadence(50);
         bike2.speedUp(20);

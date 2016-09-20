@@ -38,14 +38,18 @@ class Bicycle {
         updateSpeed();
     }
 
+    int getTireCircumference(){    // this method is overridden if a value is provided (because the subclass has the method of the same name)
+        return 80;
+    }
+
     void updateSpeed (){
 
         int inchesPerMin;
         float milesPerHour;
-        int tireCircumference = 80;
+        int tireCircumference = getTireCircumference();  // changed this to getTireCircumference  // need to make this a protected field?
         int tireRPM = 0;
-        int inchesPerMile = 63360; // there are 63360 inches in a mile
-        int minutesPerHour = 60;
+        int inchesPerMile = 63360;  // there are 63360 inches in a mile
+        int minutesPerHour = 60;   // should be a constant?
 
         tireRPM = gear * cadence;
         inchesPerMin = tireRPM * tireCircumference;
